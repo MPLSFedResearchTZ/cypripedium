@@ -10,7 +10,7 @@ module Hyrax
     self.required_fields = [:title]
 
     def primary_terms
-      [:title, :series, :issue_number, :creator_id, :date_created, :keyword, :subject,
+      [:title, :series, :issue_number, :creator_id, :creator, :date_created, :keyword, :subject,
        :abstract, :description, :identifier, :related_url, :corporate_name, :publisher, :resource_type, :license]
     end
 
@@ -25,12 +25,14 @@ module Hyrax
       result[:related_url].map! { |related_url| RDF::Markdown::Literal.new(related_url) }
       result[:description].map! { |description| RDF::Markdown::Literal.new(description) }
       result[:abstract].map! { |abstract| RDF::Markdown::Literal.new(abstract) }
+      byebug
       result
     end
 
     # This describes the parameters we are expecting to receive from the client
     # @return [Array] a list of parameters used by sanitize_params
     def self.build_permitted_params
+      byebug
       super + [
         :on_behalf_of,
         :version,

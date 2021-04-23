@@ -1,0 +1,4 @@
+terms:
+    - id: /authorities/search/creator_authority
+      term: Local creators
+      active: true

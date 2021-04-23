@@ -26,3 +26,6 @@
 
 bagButton.bindClick({'compression': 'zip'})
 bagButton.bindClick({'compression': 'tar'})
+Blacklight.onLoad( function() {
+	Hyrax.authoritySelect({ selectBox : "select#dataset_creator", inputField : "input.dataset_creator" });
+});
